@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Map to easily locate National Parks of India">
+	<link rel="stylesheet" href="./leaflet/leaflet.css" media="all">
+	<link rel="stylesheet" href="./style.css" media="all">
+	<script src="./leaflet/leaflet.js"></script>
+	<script src="./data/India_State_Boundary.js"></script>
+	<script src="./data/National-Parks.js"></script>
+	<script src="./app.js" defer></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>National Parks - Give Love for Saving World Animals</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@300;400;500;700&family=Oswald:wght@600&display=swap"
+    rel="stylesheet">
+
+    
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+  
+  <header class="header" data-header>
+    <div class="container">
+
+      <h1>
+        <a href="#" class="logo">National Parks</a>
+      </h1>
+
+      
+      <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+
+        <a href="#" class="logo">Wildvine</a>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="#home" class="navbar-link" data-nav-link>
+              <span>Home</span>
+
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#about" class="navbar-link" data-nav-link>
+              <span>About</span>
+
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#parkof" class="navbar-link" data-nav-link>
+              <span>Service</span>
+
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://phonepe.my.site.com/login?locale=us" class="navbar-link" data-nav-link>
+              <span>Donate</span>
+
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#event" class="navbar-link" data-nav-link>
+              <span>Event</span>
+
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#about" class="navbar-link" data-nav-link>
+              <span>Contact</span>
+
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+          
+
+        </ul>
+
+      </nav>
+      
+      <div class="header-action">
+
+        <a href="https://phonepe.my.site.com/login?locale=us" class="btn btn-primary">
+          <span>Donation</span>
+
+          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+        </a>
+
+      </div>
+     
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="hero" id="home">
+        <div class="container">
+
+          <p class="section-subtitle">
+            <img src="./assets/images/subtitle-img-white.png" width="32" height="7" alt="Wavy line">
+
+            <span>Welcome to National Parks</span>
+          </p>
+
+          <h2 class="h1 hero-title">
+            Preserve Nature's Beauty with <strong>National Parks</strong>
+          </h2>
+
+          <p class="hero-text">
+            Support the conservation efforts to protect the diverse wildlife and ecosystems of our national parks.
+          </p>
+
+          <a href="https://phonepe.my.site.com/login?locale=us" class="btn btn-primary">
+            <span>Donation</span>
+  
+            <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+          </a>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #FEATURES
+      -->
+
+      <section class="section features">
+        <div class="container">
+
+          <ul class="features-list">
+
+            <li class="features-item">
+              <div class="item-icon">
+                <ion-icon name="shield-checkmark-outline"></ion-icon>
+              </div>
+
+              <div>
+                <h3 class="h4 item-title">Safe Shelter</h3>
+
+                <p class="item-text">
+                  Providing a sanctuary for wildlife to thrive.
+                </p>
+              </div>
+            </li>
+
+            <li class="features-item">
+              <div class="item-icon">
+                <ion-icon name="water-outline"></ion-icon>
+              </div>
+
+              <div>
+                <h3 class="h4 item-title">Safe Water</h3>
+
+                <p class="item-text">
+                  Ensuring access to clean and safe water sources for all inhabitants.
+                </p>
+              </div>
+            </li>
+
+            <li class="features-item">
+              <div class="item-icon">
+                <ion-icon name="leaf-outline"></ion-icon>
+              </div>
+
+              <div>
+                <h3 class="h4 item-title">Ecology Save</h3>
+
+                <p class="item-text">
+                  Dedicated to preserving the delicate balance of ecosystems.
+                </p>
+              </div>
+            </li>
+
+            <li class="features-item">
+              <div class="item-icon">
+                <ion-icon name="snow-outline"></ion-icon>
+              </div>
+
+              <div>
+                <h3 class="h4 item-title">Environment</h3>
+
+                <p class="item-text">
+                  Safeguarding the natural environment for future generations.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section> 
+      <section class="section cta">
+        
+          
+
+        </div>
+      </section>
+<!-- List of national parks for Page 1 -->
+<h1  class="header1" style="color:green">Explore National Parks</h1>
+<div class="park-list" id="parkof" style="background-image: url('./assets/images/service-map.png')">
+  <!-- Parks for Page 1 -->
+  <div class="park-item">
+    <img src="https://imgs.search.brave.com/1Qd7--SBUD1ABRIkfX9bdiLX9E3p4ehTHNTwsiEEgKI/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/bXVtYmFpNzcuY29t/L2ltYWdlcy9uZXdi/bG9nL1NhbmpheS1H/YW5kaS1OYXRpb25h/bC1QYXJrLVJpdmVy/LmpwZw" alt="Jim Corbett National Park">
+    <div class="park-details">
+      <h2>Sanjay Gandhi National Park</h2>
+      <p>Sanjay Gandhi National Park, located in Mumbai, India, is a vast protected area renowned for its biodiversity and scenic beauty. Covering over 100 square kilometers, it encompasses dense forests, rocky cliffs, and serene lakes. The park is home to a variety of wildlife, including leopards, deer, macaques, and numerous bird species. One of its prominent attractions is the Kanheri Caves, ancient rock-cut Buddhist caves dating back to the 1st century BCE. Visitors can enjoy nature trails, wildlife safaris, and explore the cultural heritage of the Kanheri Caves while experiencing the tranquility of this urban oasis.</p>
+      <div class="rating">
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9734;</span>
+      </div>      
+      <a href="https://phonepe.my.site.com/login?locale=us" class="booking-link">Visit Now</a>
+      <a href="https://en.wikipedia.org/wiki/Sanjay_Gandhi_National_Park" class="learn-more-link" style="color:blue">Learn More</a>
+    </div>
+  </div>
+  
+  
+  <div class="park-item">
+    <img src="https://imgs.search.brave.com/-7Nl4-mQjTf9LkphI3dXZDYrDBE7ye1vYbaR5SNsZ0A/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMudHJhdmVsdHJp/YW5nbGUuY29tL2Js/b2cvd3AtY29udGVu/dC91cGxvYWRzLzIw/MjAvMDEvUmFqYWpp/LU5hdGlvbmFsLVBh/cmtfMjF0aC1qYW4u/anBn" alt="Jim Corbett National Park">
+    <div class="park-details">
+      <h2>Rajaji National Park</h2>
+      <p>Rajaji National Park, located in the Indian state of Uttarakhand, is a sprawling wildlife reserve known for its diverse flora and fauna. Named after the renowned freedom fighter C. Rajagopalachari, the park spans across the Shivalik ranges and offers a picturesque landscape of dense forests, grasslands, and river valleys. It is home to a rich variety of wildlife, including Asian elephants, tigers, leopards, deer, and over 400 bird species. </p>
+      <div class="rating">
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+      </div>      
+      <a href="https://phonepe.my.site.com/login?locale=us" class="booking-link">Visit Now</a>
+      <a href="https://en.wikipedia.org/wiki/Rajaji_National_Park" class="learn-more-link" style="color:blue">Learn More</a>
+    </div>
+  </div>
+  <div class="park-item">
+    <img src="https://imgs.search.brave.com/B3DI6yNIiUCkh6wMaxzaT1S15bpgef2-B0EuXdcGGeQ/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy80/LzQ5L1BhbnRoZXJh/X3RpZ3Jpc190aWdy/aXMuanBn" alt="Jim Corbett National Park">
+    <div class="park-details">
+      <h2>Kalakad Mundanthurai Tiger Reserve</h2>
+      <p>Kalakad Mundanthurai Tiger Reserve, situated in the southern Indian state of Tamil Nadu, is one of the largest protected areas in the region. Named after the Kalakad and Mundanthurai mountain ranges, it encompasses diverse ecosystems ranging from tropical wet evergreen forests to dry deciduous forests. The reserve is renowned for its rich biodiversity, including a variety of plant species, mammals, reptiles, and birds. As a vital habitat for the endangered Bengal tiger, it plays a crucial role in tiger conservation efforts in India. </p>
+      <div class="rating">
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+      </div>      
+      <a href="https://phonepe.my.site.com/login?locale=us" class="booking-link">Visit Now</a>
+      <a href="https://en.wikipedia.org/wiki/Kalakkad_Mundanthurai_Tiger_Reserve" class="learn-more-link" style="color:blue">Learn More</a>
+    </div>
+  </div>
+  <div class="park-item">
+    <img src="https://imgs.search.brave.com/hcwNnCO6ptSV1q9CfQ5XRH0f9XH5_q2vhHkHPK9LDbE/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy82/LzZkL0p1bmdsZV9C/YWJsZXJfYXRfU3Vs/dGFucHVyX05hdGlv/bmFsX1BhcmsuanBn" alt="Jim Corbett National Park">
+    <div class="park-details">
+      <h2>Sultanpur National Park</h2>
+      <p>Sultanpur National Park, located in the Gurgaon district of Haryana, India, is a popular bird sanctuary renowned for its avian diversity. Spread over an area of approximately 143 acres, the park provides a haven for migratory birds, particularly during the winter months. It offers a serene environment with various wetland habitats, including marshes, lakes, and grasslands, attracting thousands of bird species such as Siberian cranes, greater flamingos, and painted storks. Apart from birdwatching, visitors can enjoy nature trails, bird hides, and observation towers for a close encounter with the park's rich biodiversity.</p>
+      <div class="rating">
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9734;</span>
+      </div>      
+      <a href="https://phonepe.my.site.com/login?locale=us" class="booking-link">Visit Now</a>
+      <a href="https://en.wikipedia.org//wiki/Sultanpur_National_Park" class="learn-more-link" style="color:blue">Learn More</a>
+    </div>
+  </div>
+  <div class="park-item">
+    <img src="https://imgs.search.brave.com/T0agrhxGKVfWSWP0zTWObHkvg-yT5eJD6f3PwGxqnQY/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9weXQt/YmxvZ3MuaW1naXgu/bmV0LzIwMjAvMDUv/MjY1NjM1NzI1MjJf/NzhhYmNjNzU1Ml9j/LmpwZz9hdXRvPWZv/cm1hdCZmaXQ9c2Nh/bGUmaD02ODEmaXhs/aWI9cGhwLTMuMy4w/Jnc9MTAyNCZ3cHNp/emU9bGFyZ2U" alt="Jim Corbett National Park">
+    <div class="park-details">
+      <h2>Campbell Bay National Park</h2>
+      <p>Campbell Bay National Park is situated in the Nicobar district of the Andaman and Nicobar Islands, India. Covering an area of approximately 426 square kilometers, this national park encompasses a diverse range of habitats including tropical evergreen forests, mangroves, and marine ecosystems. It is renowned for its rich biodiversity, housing various endemic and endangered species such as the Nicobar megapode, Nicobar pigeon, and Nicobar scrubfowl. The park also features pristine beaches, coral reefs, and scenic viewpoints, offering visitors opportunities for hiking, birdwatching, and snorkeling amidst stunning natural surroundings.</p>
+      <div class="rating">
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9734;</span>
+      </div>      
+      <a href="https://phonepe.my.site.com/login?locale=us" class="booking-link">Visit Now</a>
+      <a href="https://en.wikipedia.org/wiki/Campbell_Bay_National_Park" class="learn-more-link" style="color:blue">Learn More</a>
+    </div>
+  </div>
+  <div class="park-item">
+    <img src="https://imgs.search.brave.com/Cug7b4cwJdTyW0vu4FG3nLs-zY5Usn3e4SUf3JxeryY/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy8x/LzFlL1NyaV9WZW5r/YXRlc3dhcmFfTmF0/aW9uYWxfUGFya19U/aXJ1bWFsYV9IaWxs/c18wMS5qcGc" alt="Jim Corbett National Park">
+    <div class="park-details">
+      <h2>Sri Venkateswara National Park</h2>
+      <p>Sri Venkateswara National Park, located in the Chittoor and Cuddapah districts of Andhra Pradesh, India, is renowned for its scenic beauty and biodiversity. Spanning an area of about 353 square kilometers, the park is nestled in the Eastern Ghats range, offering spectacular landscapes of lush forests, rolling hills, and cascading waterfalls. It is named after the famous temple of Lord Venkateswara (also known as Balaji) situated atop the Tirumala Hills within the park boundaries.</p>
+      <div class="rating">
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9734;</span>
+      </div>      
+      <a href="https://phonepe.my.site.com/login?locale=us" class="booking-link">Visit Now</a>
+      <a href="https://en.wikipedia.org/wiki/Sri_Venkateswara_National_Park" class="learn-more-link" style="color:blue">Learn More</a>
+    </div>
+  </div>
+  <div class="park-item">
+    <img src="https://imgs.search.brave.com/mPCV6QeaCMDHauwq79rrl_EW1ezWMPk0vsF5Nka2hms/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMubGl2ZW1pbnQu/Y29tL2ltZy8yMDIw/LzEyLzAzLzYwMHgz/MzgvTFNwaWNsZWFk/XzE2MDcwMDgzMTY2/ODZfMTYwNzAwODMy/MzQzMy5qcGc" alt="Jim Corbett National Park">
+    <div class="park-details">
+      <h2>Mollem National Park</h2>
+      <p>Mollem National Park, situated in the Indian state of Goa, is a biodiverse sanctuary known for its rich flora and fauna. Spanning approximately 240 square kilometers, it encompasses lush tropical forests, rolling hills, and sparkling waterfalls, creating a haven for nature lovers and wildlife enthusiasts.
+
+        The park is home to a variety of wildlife species, including Bengal tigers, leopards, Indian bison (gaur), sloth bears, and various species of deer and monkeys.</p>
+      <div class="rating">
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+      </div>      
+      <a href="https://phonepe.my.site.com/login?locale=us" class="booking-link">Visit Now</a>
+      <a href="https://en.wikipedia.org/wiki/Bhagwan_Mahaveer_Sanctuary_and_Mollem_National_Park" class="learn-more-link" style="color:blue">Learn More</a>
+    </div>
+  </div>
+  <div class="park-item">
+    <img src="https://imgs.search.brave.com/rUNcGr7AM7gxCKuxJKZNpbEnZhkATSdmB07XJtFsrlw/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWdz/LnNlYXJjaC5icmF2/ZS5jb20vdWR0dnNS/WkVSSGVpUHdRTm5S/NldEUVR3S0xKVGpD/cl83VWdkcEMyXzRl/dy9yczpmaXQ6NTAw/OjA6MC9nOmNlL2FI/UjBjSE02THk5dFpX/UnAvWVM1cGMzUnZZ/MnR3YUc5MC9ieTVq/YjIwdmFXUXZPVEl4/L01qVTNNelV2Y0do/dmRHOHYvY0dWeWFY/bGhjaTF1WVhScC9i/MjVoYkMxd1lYSnJM/V3RsL2NtVnNZUzVx/Y0djX2N6MDIvTVRK/NE5qRXlKbmM5TUNa/ci9QVEl3Sm1NOVlt/TmpTVGR3L1JYRlNZ/M1ZrVTFFMWJUSnUv/VjFSUU1IWk1WWEZ0/VEY5NS9RaTFJVTBR/elJrTkRiVk42L1dU/MA.jpeg" alt="Jim Corbett National Park">
+    <div class="park-details">
+      <h2>Blackbuck National Park</h2>
+      <p>Blackbuck National Park, Velavadar, located in Gujarat, India, is renowned for its conservation efforts focused on the endangered blackbuck antelope. Spanning over 34 square kilometers, it provides a protected habitat for these graceful creatures, along with various bird species and other wildlife.
+
+        The park's unique grassland ecosystem, dominated by Prosopis and Butea shrubs, offers a picturesque landscape for visitors to explore.</p>
+      <div class="rating">
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9734;</span>
+        <span class="star">&#9734;</span>
+      </div>      
+      <a href="https://phonepe.my.site.com/login?locale=us" class="booking-link">Visit Now</a>
+      <a href="https://en.wikipedia.org/wiki/Blackbuck_National_Park,_Velavadar" class="learn-more-link" style="color:blue">Learn More</a>
+    </div>
+  </div>
+  <div class="park-item">
+    <img src="https://imgs.search.brave.com/ABG9Vax0Xr6pxCtqQwbjtf0YRLUt6ivpx7IIPTj5vxY/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9k/L2RkL01haGF0bWFf/R2FuZGhpX01hcmlu/ZV9OYXRpb25hbF9Q/YXJrXyxBbmRhbWFu/LmpwZw" alt="Jim Corbett National Park">
+    <div class="park-details">
+      <h2>Marine National Park</h2>
+      <p>Marine National Park, situated in the Gulf of Kutch in Gujarat, India, is the country's first marine sanctuary. Covering an area of around 458 square kilometers, it is renowned for its rich marine biodiversity and vibrant coral reefs.
+
+        This park is home to various marine species, including coral reefs, dolphins, dugongs, and a wide array of fish and invertebrates.</p>
+      <div class="rating">
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9734;</span>
+      </div>      
+      <a href="https://phonepe.my.site.com/login?locale=us" class="booking-link">Visit Now</a>
+      <a href="https://en.wikipedia.org/wiki/Marine_National_Park,_Gulf_of_Kutch" class="learn-more-link" style="color:blue">Learn More</a>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Pagination -->
+  <div class="pagination" style="display: flex;">
+    <a class="elements" href="index.html">1</a>
+    <a class="elements" href="state2.html">2</a>
+    <a href="state3.html">3</a>
+    <a class="elements" href="state4.html">4</a>
+    <a href="state5.html">5</a>
+    <!-- Add more pagination links for additional pages -->
+  </div>
+</div>
+<div id="map"></div>
+
+
+
+
+
+
+
+      <!-- 
+        - #SERVICE
+      -->
+
+      
+
+
+
+
+
+      
+
+      <section class="testi">
+
+        <div class="testi-content">
+
+          <p class="section-subtitle">
+            <img src="./assets/images/subtitle-img-green.png" width="32" height="7" alt="Wavy line">
+
+            <span>Our Testimonials</span>
+          </p>
+
+          <h2 class="h2 section-title">
+            What People Say About <strong>Our Organization</strong>
+          </h2>
+
+          <div class="testi-card">
+
+            <figure class="card-avatar">
+              <img src="./assets/images/bhaumik.jpg" width="60" height="60" border-radius="50%" alt="David S. Neuman">
+            </figure>
+
+            <div>
+              <blockquote class="testi-text">
+                But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness
+              </blockquote>
+
+              <h3 class="testi-name">Bhaumik</h3>
+
+              <p class="testi-title">Business Manager</p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <figure class="testi-banner">
+          <img src="./assets/images/testi-banner.jpg" width="960" height="846" loading="lazy" alt="Rhinoceros"
+            class="img-cover">
+        </figure>
+
+      </section>
+
+
+
+
+
+      <!-- 
+        - #PARTNER
+      -->
+
+      <section class="section partner">
+        <div class="container">
+
+          <a href="#" class="partner-logo">
+            <img src="./assets/images/partner-1.png" width="157" height="55" loading="lazy" alt="Children Fund"
+              class="gray">
+
+            <img src="./assets/images/partner-1-active.png" width="157" height="55" loading="lazy" alt="Children Fund"
+              class="color">
+          </a>
+
+          <a href="#" class="partner-logo">
+            <img src="./assets/images/partner-2.png" width="163" height="55" loading="lazy" alt="Non Profit Agency"
+              class="gray">
+
+            <img src="./assets/images/partner-2-active.png" width="163" height="55" loading="lazy"
+              alt="Non Profit Agency" class="color">
+          </a>
+
+          <a href="#" class="partner-logo">
+            <img src="./assets/images/partner-3.png" width="149" height="55" loading="lazy" alt="Rise Hand Help Us"
+              class="gray">
+
+            <img src="./assets/images/partner-3-active.png" width="149" height="55" loading="lazy"
+              alt="Rise Hand Help Us" class="color">
+          </a>
+
+          <a href="#" class="partner-logo">
+            <img src="./assets/images/partner-4.png" width="169" height="58" loading="lazy" alt="Helping" class="gray">
+
+            <img src="./assets/images/partner-4-active.png" width="169" height="58" loading="lazy" alt="Helping"
+              class="color">
+          </a>
+
+          <a href="#" class="partner-logo">
+            <img src="./assets/images/partner-5.png" width="211" height="55" loading="lazy" alt="Poor Fund Organization"
+              class="gray">
+
+            <img src="./assets/images/partner-5-active.png" width="211" height="55" loading="lazy"
+              alt="Poor Fund Organization" class="color">
+          </a>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #EVENT
+      -->
+
+      <section class="section event" id="event">
+        <div class="container">
+
+          <p class="section-subtitle">
+            <img src="./assets/images/subtitle-img-green.png" width="32" height="7" alt="Wavy line">
+
+            <span>Event & Program</span>
+
+            <img src="./assets/images/subtitle-img-green.png" width="32" height="7" alt="Wavy line">
+          </p>
+
+          <h2 class="h2 section-title">
+            Our Most Popular Causes For <strong>Building Fund</strong>
+          </h2>
+
+          <ul class="event-list">
+
+            <li>
+              <div class="event-card">
+
+                <time class="card-time" datetime="01-05">
+                  <span class="month">Jan</span>
+
+                  <span class="date">05</span>
+                </time>
+
+                <div class="wrapper">
+
+                  <div class="card-content">
+                    <p class="card-subtitle">National Parks</p>
+
+                    <h3 class="card-title">Wildlife SOS events</h3>
+
+                    <p class="card-text">
+                      In the Heart of the Wild: A Journey to Remember
+                    </p>
+                  </div>
+
+                  <a class="btn btn-white">
+                    <span>View Events</span>
+
+                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="event-card">
+
+                <time class="card-time" datetime="02-23">
+                  <span class="month">Feb</span>
+
+                  <span class="date">23</span>
+                </time>
+
+                <div class="wrapper">
+
+                  <div class="card-content">
+                    <p class="card-subtitle">Wildlife Animals</p>
+
+                    <h3 class="card-title">Ruth & Kate Portrait Campaign</h3>
+
+                    <p class="card-text">
+                      Discover the Magic of Our Natural World
+                    </p>
+                  </div>
+
+                  <a class="btn btn-white">
+                    <span>View Events</span>
+
+                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="event-card">
+
+                <time class="card-time" datetime="03-27">
+                  <span class="month">Mar</span>
+
+                  <span class="date">27</span>
+                </time>
+
+                <div class="wrapper">
+
+                  <div class="card-content">
+                    <p class="card-subtitle">Wildlife Animals</p>
+
+                    <h3 class="card-title">Protect the Pawprints 2024</h3>
+
+                    <p class="card-text">
+                      Wilderness Wonders: Explore, Learn, Connect
+                    </p>
+                  </div>
+
+                  <a class="btn btn-white">
+                    <span>View Events</span>
+
+                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+          <a class="btn btn-secondary">
+            <span>Learn More Us</span>
+
+            <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+          </a>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #INSTA POST
+      -->
+
+      <section class="insta-post" id="about">
+
+        <ul class="insta-post-list">
+
+          <li class="insta-post-item">
+            <a href="https://www.bing.com/ck/a?!&&p=74954d022b476e35JmltdHM9MTcxMzgzMDQwMCZpZ3VpZD0yYmJiNDAwZC0wNjIyLTZiOGQtMDY1Zi01MzhmMDdkMDZhNjAmaW5zaWQ9NTIwNw&ptn=3&ver=2&hsh=3&fclid=2bbb400d-0622-6b8d-065f-538f07d06a60&psq=instagram&u=a1aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS8&ntb=1" class="insta-post-link">
+              <img src="./assets/images/insta-1.jpg" width="320" height="300" loading="lazy" alt="Lion"
+                class="img-cover">
+
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li class="insta-post-item">
+            <a href="https://www.bing.com/ck/a?!&&p=74954d022b476e35JmltdHM9MTcxMzgzMDQwMCZpZ3VpZD0yYmJiNDAwZC0wNjIyLTZiOGQtMDY1Zi01MzhmMDdkMDZhNjAmaW5zaWQ9NTIwNw&ptn=3&ver=2&hsh=3&fclid=2bbb400d-0622-6b8d-065f-538f07d06a60&psq=instagram&u=a1aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS8&ntb=1" class="insta-post-link">
+              <img src="./assets/images/insta-2.jpg" width="320" height="300" loading="lazy" alt="Deer"
+                class="img-cover">
+
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li class="insta-post-item">
+            <a href="https://www.bing.com/ck/a?!&&p=74954d022b476e35JmltdHM9MTcxMzgzMDQwMCZpZ3VpZD0yYmJiNDAwZC0wNjIyLTZiOGQtMDY1Zi01MzhmMDdkMDZhNjAmaW5zaWQ9NTIwNw&ptn=3&ver=2&hsh=3&fclid=2bbb400d-0622-6b8d-065f-538f07d06a60&psq=instagram&u=a1aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS8&ntb=1" class="insta-post-link">
+              <img src="./assets/images/insta-3.jpg" width="320" height="300" loading="lazy" alt="Wild Bear"
+                class="img-cover">
+
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li class="insta-post-item">
+            <a href="https://www.bing.com/ck/a?!&&p=74954d022b476e35JmltdHM9MTcxMzgzMDQwMCZpZ3VpZD0yYmJiNDAwZC0wNjIyLTZiOGQtMDY1Zi01MzhmMDdkMDZhNjAmaW5zaWQ9NTIwNw&ptn=3&ver=2&hsh=3&fclid=2bbb400d-0622-6b8d-065f-538f07d06a60&psq=instagram&u=a1aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS8&ntb=1" class="insta-post-link">
+              <img src="./assets/images/insta-4.jpg" width="320" height="300" loading="lazy" alt="Deer"
+                class="img-cover">
+
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li class="insta-post-item">
+            <a href="https://www.bing.com/ck/a?!&&p=74954d022b476e35JmltdHM9MTcxMzgzMDQwMCZpZ3VpZD0yYmJiNDAwZC0wNjIyLTZiOGQtMDY1Zi01MzhmMDdkMDZhNjAmaW5zaWQ9NTIwNw&ptn=3&ver=2&hsh=3&fclid=2bbb400d-0622-6b8d-065f-538f07d06a60&psq=instagram&u=a1aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS8&ntb=1" class="insta-post-link">
+              <img src="./assets/images/insta-5.jpg" width="320" height="300" loading="lazy" alt="Horses"
+                class="img-cover">
+
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <ul class="footer-list">
+
+        <li>
+          <a href="#" class="footer-link">Terms of use</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Privacy & Policy</a>
+        </li>
+
+      </ul>
+
+      <p class="copyright">
+        Copyright 2022 <a href="#" class="copyright-link">codewithlegan</a>. All Rights Reserved.
+      </p>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  
+</body>
+
+</html>
